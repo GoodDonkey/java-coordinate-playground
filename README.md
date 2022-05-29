@@ -1,26 +1,39 @@
-## [NEXTSTEP 플레이그라운드의 미션 진행 과정](https://github.com/next-step/nextstep-docs/blob/master/playground/README.md)
 
----
-## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
+## CoordinateValue [class]
+- 1개의 값을 가진다.
+- 1개의 값 범위를 가진다.
+- 값을 검증을 수행한다.
+- 값이 같은지 비교가능하다
 
----
-1. 피드백 강의 전까지 미션 진행 
-> 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
-> 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
+## ValueRange [interface]
+- 값 범위를 검증한다.
 
-![mission baseball](https://raw.githubusercontent.com/next-step/nextstep-docs/master/playground/images/mission_baseball.png)
+### LessThanOrEquals24ValueRange [class]
+- 값이 24 이하인지 검증한다.
 
----
-2. 피드백 앞 단계까지 미션 구현을 완료한 후 피드백 강의를 학습한다.
+## TwoDimensionalCoordinate [class]
+- 2개의 값으로 좌표를 표현한다.
+- 좌표값이 같은지 비교가능하다.
 
----
-3. Git 브랜치를 master 또는 main으로 변경한 후 피드백을 반영하기 위한 새로운 브랜치를 생성한 후 처음부터 다시 미션 구현을 도전한다.
+## AbstractTwoDimensionalShape [abstract class]
+- 2개 이상의 좌표값으로 2차원 도형을 표현한다.
+- 각 좌표는 같아서는 안된다.
 
-```
-git branch -a // 모든 로컬 브랜치 확인
-git checkout master // 기본 브랜치가 master인 경우
-git checkout main // 기본 브랜치가 main인 경우
+## Line [class]
+- 2개의 좌표값을 가지는 선분이다.
 
-git checkout -b 브랜치이름
-ex) git checkout -b apply-feedback
-```
+## Rectangle [class]
+- 4개의 좌표값을 가지는 직사각형이다.
+
+## Triangle [class]
+- 3개의 좌표값을 가지는 삼각형이다.
+
+## Calculator [class]
+
+## EuclideanDistance [interface]
+
+## SquareArea [interface]
+
+## InputView [class]
+
+## ResultView [class]
