@@ -14,7 +14,7 @@ class LessThanOrEqualTo24ValueRangeTest {
     @ValueSource(doubles = {1.0, -1.0, 24, 23.9999999})
     void assertValidValueRange(double value) {
         LessThanOrEqualTo24ValueRange range = new LessThanOrEqualTo24ValueRange();
-        assertThatNoException().isThrownBy(() -> range.assertValueRange(value));
+        assertThatNoException().isThrownBy(() -> range.validate(value));
     }
     
     @ParameterizedTest
@@ -22,7 +22,7 @@ class LessThanOrEqualTo24ValueRangeTest {
     @ValueSource(doubles = {25, 24.1, 24.001, 24.000000001})
     void assertInvalidValueRange(double value) {
         LessThanOrEqualTo24ValueRange range = new LessThanOrEqualTo24ValueRange();
-        assertThatThrownBy(() -> range.assertValueRange(value))
+        assertThatThrownBy(() -> range.validate(value))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

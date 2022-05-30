@@ -1,23 +1,21 @@
 package coordinate.domain;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
-public class CoordinateValue {
+public class Value {
     
     private final double value;
-    private final ValueRange valueRange;
+    private final ValueCondition valueCondition;
     
-    public CoordinateValue(double value, ValueRange valueRange) {
-        this.valueRange = valueRange;
-        valueRange.assertValueRange(value);
+    public Value(double value, ValueCondition valueCondition) {
+        this.valueCondition = valueCondition;
+        valueCondition.validate(value);
         this.value = value;
     }
     
-    public CoordinateValue(double value) {
-        this.valueRange = new DefaultValueRange();
-        valueRange.assertValueRange(value);
+    public Value(double value) {
+        this.valueCondition = new NoValueCondition();
+        valueCondition.validate(value);
         this.value = value;
     }
     
@@ -25,7 +23,7 @@ public class CoordinateValue {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CoordinateValue that = (CoordinateValue) o;
+        Value that = (Value) o;
         return Double.compare(that.value, value) == 0;
     }
     
