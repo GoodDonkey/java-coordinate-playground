@@ -7,7 +7,7 @@ public class TwoDimensionalCoordinate {
     final Value x;
     final Value y;
     
-    protected TwoDimensionalCoordinate(double x, double y) {
+    public TwoDimensionalCoordinate(double x, double y) {
         this.x = new Value(x, new LessThanOrEqualTo24ValueRange());
         this.y = new Value(y, new LessThanOrEqualTo24ValueRange());
     }
