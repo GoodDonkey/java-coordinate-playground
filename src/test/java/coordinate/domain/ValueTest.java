@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -39,8 +38,8 @@ class ValueTest {
         Value value2 = new Value(v2);
         Value value3 = new Value(v3);
     
-        assertThat(value1.subtract(value2).equals(value3)).isTrue();
-        assertThat(value1.subtract(value2)).isEqualTo(value3);
+        assertThat(value1.minus(value2).equals(value3)).isTrue();
+        assertThat(value1.minus(value2)).isEqualTo(value3);
     }
     
     @ParameterizedTest
@@ -51,8 +50,8 @@ class ValueTest {
         Value value2 = new Value(v2);
         Value value3 = new Value(v3);
         
-        assertThat(value1.subtract(value2).equals(value3)).isFalse();
-        assertThat(value1.subtract(value2)).isNotEqualTo(value3);
+        assertThat(value1.minus(value2).equals(value3)).isFalse();
+        assertThat(value1.minus(value2)).isNotEqualTo(value3);
     }
     
     @ParameterizedTest
@@ -67,8 +66,8 @@ class ValueTest {
         Value value2 = new Value(v2);
         Value value3 = new Value(v3);
         
-        assertThat(value1.multiply(value2).equals(value3)).isTrue();
-        assertThat(value1.multiply(value2)).isEqualTo(value3);
+        assertThat(value1.times(value2).equals(value3)).isTrue();
+        assertThat(value1.times(value2)).isEqualTo(value3);
     }
     
     @ParameterizedTest
@@ -83,8 +82,8 @@ class ValueTest {
         Value value2 = new Value(v2);
         Value value3 = new Value(v3);
         
-        assertThat(value1.multiply(value2).equals(value3)).isFalse();
-        assertThat(value1.multiply(value2)).isNotEqualTo(value3);
+        assertThat(value1.times(value2).equals(value3)).isFalse();
+        assertThat(value1.times(value2)).isNotEqualTo(value3);
     }
     
     @ParameterizedTest

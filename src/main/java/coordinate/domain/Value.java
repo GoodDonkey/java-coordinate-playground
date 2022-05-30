@@ -32,11 +32,11 @@ public class Value {
         return Objects.hash(value);
     }
     
-    public Value subtract(Value other) {
+    public Value minus(Value other) {
         return new Value(this.value - other.value);
     }
     
-    public Value multiply(Value other) {
+    public Value times(Value other) {
         return new Value(this.value * other.value);
     }
     
@@ -46,5 +46,14 @@ public class Value {
     
     public Value squareRoot() {
         return new Value(Math.sqrt(this.value));
+    }
+    
+    public Value plus(Value other) {
+        return new Value(this.value + other.value);
+    }
+    
+    // for test
+    protected double raw() {
+        return this.value;
     }
 }
