@@ -31,4 +31,20 @@ public class Value {
     public int hashCode() {
         return Objects.hash(value);
     }
+    
+    public Value subtract(Value other) {
+        return new Value(this.value - other.value);
+    }
+    
+    public Value multiply(Value other) {
+        return new Value(this.value * other.value);
+    }
+    
+    public Value square() {
+        return new Value(Math.pow(this.value, 2));
+    }
+    
+    public Value squareRoot() {
+        return new Value(Math.sqrt(this.value));
+    }
 }
