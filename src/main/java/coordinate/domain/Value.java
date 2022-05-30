@@ -56,4 +56,9 @@ public class Value {
     protected double raw() {
         return this.value;
     }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }
