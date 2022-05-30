@@ -4,12 +4,12 @@ import java.util.Objects;
 
 public class TwoDimensionalCoordinate {
     
-    final CoordinateValue x;
-    final CoordinateValue y;
+    final Value x;
+    final Value y;
     
     protected TwoDimensionalCoordinate(double x, double y) {
-        this.x = new CoordinateValue(x);
-        this.y = new CoordinateValue(y);
+        this.x = new Value(x, new LessThanOrEqualTo24ValueRange());
+        this.y = new Value(y, new LessThanOrEqualTo24ValueRange());
     }
     
     @Override
