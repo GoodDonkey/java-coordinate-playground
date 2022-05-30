@@ -1,14 +1,11 @@
 package coordinate.domain;
 
-import org.graalvm.compiler.api.replacements.Snippet;
-
-import java.lang.reflect.Array;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.HashSet;
 
 public abstract class AbstractTwoDimensionalShape {
     
-    private final List<TwoDimensionalCoordinate> coordinates;
+    protected final TwoDimensionalCoordinate[] coordinates;
     
     /* [ 이 생성자는 2개 이상의 좌표를 받아 2차원 도형을 표현한다. ]
     * 2개 이상의 좌표를 파라미터로 개별로 받게 하는 것이 번거로움.
@@ -21,7 +18,7 @@ public abstract class AbstractTwoDimensionalShape {
     protected AbstractTwoDimensionalShape(TwoDimensionalCoordinate[] coordinates) {
         assertNoEqualCoordinates(coordinates);
         assertLengthTwo(coordinates);
-        this.coordinates = new ArrayList<>(Arrays.asList(coordinates));
+        this.coordinates = coordinates;
     }
     
     private AbstractTwoDimensionalShape() { coordinates = null; }
@@ -40,6 +37,6 @@ public abstract class AbstractTwoDimensionalShape {
     }
     
     public final int numberOfVertices() {
-        return coordinates.size();
+        return coordinates.length;
     }
 }
